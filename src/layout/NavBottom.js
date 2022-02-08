@@ -7,11 +7,13 @@ import "./NavBottom.css";
 export default function NavBottom() {
   
   let timeNow = new Date().toLocaleString() + "";
-  let justTime = timeNow.substr(9,6) + " " + timeNow.substr(19);
-
+  
+  let justTime = (timeNow.length === 20) ? timeNow.substr(9,5) + " " + timeNow.substr(18) : timeNow.substr(9,6) + " " + timeNow.substr(19);
+  
+  console.log(timeNow, justTime)
   return (
     <Container>
-      <Navbar expand="lg" fixed="bottom" className="bottomContainer">
+      <Navbar expand="sm" fixed="bottom" className="bottomContainer">
         <Container style={{ marginLeft: 0 }}>
           <Navbar.Brand href="/" className="navbrand" style={{ fontSize: 18 }}>
             Home
